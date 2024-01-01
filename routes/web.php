@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,6 @@ Route::get('/admin', function () {
 Route::get('/login', function () {
     return view('backend.login');
 });
+Route::get('/contact',[ContactController::class,'contact']);
+Route::post('/send',[ContactController::class,'store']);
+Route::get('/contactlist',[ContactController::class,'contactlist']);
